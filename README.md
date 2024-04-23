@@ -56,3 +56,29 @@ Activate your virtual environment and install the required libraries.
     pyenv activate chest_xray_env
     pip install -r requirements.txt
 ```
+
+
+## Possible Errors
+### Error 1: `command not found: pyenv`
+Solution: Add the following line to your shell configuration file (e.g., `~/.bashrc`, `~/.bash_profile`, or `~/.zshrc`)
+```
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+```
+###  Error 2: ModuleNotFoundError: No module named '_ctypes'
+Solution: Install the required library using the following command and try again.
+- upgrade your system
+```
+    sudo apt-get update
+    sudo apt-get upgrade
+```
+- install the required library
+```
+    sudo apt-get install libffi-dev
+```
+- recompile python
+```
+    pyenv uninstall 3.7.0
+    pyenv install 3.7.0
+```
