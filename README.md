@@ -37,7 +37,23 @@ Install pyenv. Visit https://github.com/pyenv/pyenv#installation for detailed in
 
 ### For Linux:
 ```
+    sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
     curl https://pyenv.run | bash
+```
+#### if you are using bash 
+```
+    echo -e 'export PYENV_ROOT="$HOME/.pyenv"\nexport PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+    echo -e 'eval "$(pyenv init --path)"\neval "$(pyenv init -)"' >> ~/.bashrc
+```
+#### if you are using zsh
+```
+    echo -e 'export PYENV_ROOT="$HOME/.pyenv"\nexport PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+    echo -e 'eval "$(pyenv init --path)"\neval "$(pyenv init -)"' >> ~/.zshrc
+```
+##### Restart your terminal and check if pyenv is installed
+```
+    exec "$SHELL"
+    pyenv --version
 ```
 
 ## Step 4: Create a Virtual Environment
@@ -45,8 +61,8 @@ Install pyenv. Visit https://github.com/pyenv/pyenv#installation for detailed in
 Create a virtual environment to manage the project's dependencies separately.
 Create a virtual environment using Python 3.7
 ```
-    pyenv install 3.7.0
-    pyenv virtualenv 3.7.0 chest_xray_env
+    pyenv install 3.11.9
+    pyenv virtualenv 3.11.9 chest_xray_env
 ```
 
 ## Step 5: Install Required Libraries
@@ -79,6 +95,6 @@ Solution: Install the required library using the following command and try again
 ```
 - recompile python
 ```
-    pyenv uninstall 3.7.0
-    pyenv install 3.7.0
+    pyenv uninstall 3.11.9
+    pyenv install 3.11.9
 ```
